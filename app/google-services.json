@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "927115018997",
+    "firebase_url": "https://doorstep-bc48e.firebaseio.com",
+    "project_id": "doorstep-bc48e",
+    "storage_bucket": "doorstep-bc48e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927115018997:android:7d6cc21f389412eadefbbc",
+        "android_client_info": {
+          "package_name": "com.nightcoders.doorstep.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927115018997-5tel7vbpo441d083kf7agsscr8bpe75c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nightcoders.doorstep.vendor",
+            "certificate_hash": "8029e987375c40f3787aa97a48b530074926dff9"
+          }
+        },
+        {
+          "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ea6Ne4_PUuqVek23hTkOZd221rj3y8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927115018997:android:6537cdd52885c533defbbc",
+        "android_client_info": {
+          "package_name": "com.teamnightcoders.doorstep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ea6Ne4_PUuqVek23hTkOZd221rj3y8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927115018997:android:a987c19e427ed9bbdefbbc",
+        "android_client_info": {
+          "package_name": "com.teamnightcoders.doorstep.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ea6Ne4_PUuqVek23hTkOZd221rj3y8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927115018997-r6nllflrrkfbm0ev888s7ov8b43vhdk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
