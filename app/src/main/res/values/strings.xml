@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">doorstep</string>
+    <string name="doorstep_user">DOORSTEP USER</string>
+    <string name="facebook_app_id">668314863894910</string>
+    <string name="fb_login_protocol_scheme">fb668314863894910</string>
+
+</resources>
