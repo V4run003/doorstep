@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Enter Details"
+                android:textColor="@color/blue_dark"
+                android:textSize="25dp" />
+            <!---->
+
+
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="35dp"
+                android:text=" Name" />
+
+            <EditText
+                android:id="@+id/shop_name"
+                style="@style/registerEditTextStyle"
+                android:hint="Full Name" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:text="District" />
+
+            <EditText
+                android:id="@+id/region"
+                style="@style/editTextStyle"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:hint="Region"
+                android:inputType="textPersonName"
+                tools:ignore="KeyboardInaccessibleWidget" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+
+            <!---->
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:text="Phone Number"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/shop_category"
+                style="@style/registerEditTextStyle"
+                android:hint="Category Of The Shop"
+                android:inputType="textPersonName" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+
+
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:text="Address Line 1" />
+
+            <EditText
+                android:id="@+id/address1"
+                style="@style/registerEditTextStyle"
+                android:hint="Address "
+                android:inputType="textEmailAddress" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+            <!--            -->
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:text="Address Line 2" />
+
+            <EditText
+                android:id="@+id/address2"
+                style="@style/registerEditTextStyle"
+                android:hint="Address "
+                android:inputType="textPassword" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+
+
+
+            <TextView
+                style="@style/editTextTitleTextStyle"
+                android:text="PIN Code" />
+
+            <EditText
+                android:id="@+id/pincode"
+                style="@style/registerEditTextStyle"
+                android:hint="PIN code"
+                android:inputType="textPassword" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+            <TextView
+            style="@style/editTextTitleTextStyle"
+            android:text="Landmark" />
+
+            <EditText
+                android:id="@+id/landmark"
+                style="@style/registerEditTextStyle"
+                android:hint="Landmark"
+                android:inputType="textPassword" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/view_color" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seller_reg"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/blue_dark"
+                android:elevation="0dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

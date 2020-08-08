@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -101,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                                 progress.cancel();
                                 Toast.makeText(LoginActivity.this,"Login error, Please check the email and password",Toast.LENGTH_SHORT).show();
                             } else {
-                                Intent intoHome = new Intent(LoginActivity.this, UserActivity.class);
+                                Intent intoHome = new Intent(LoginActivity.this, MainActivity.class);
                                 progress.cancel();
                                 startActivity(intoHome);
                             }
@@ -179,7 +178,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
         if(user!=null){
-            Intent intent=new Intent(getApplicationContext(),UserActivity.class) ;
+            Intent intent=new Intent(getApplicationContext(),MainActivity.class) ;
             startActivity(intent);
         }
     }
