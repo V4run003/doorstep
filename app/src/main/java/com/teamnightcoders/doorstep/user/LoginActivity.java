@@ -2,8 +2,10 @@ package com.teamnightcoders.doorstep.user;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
     Button verify;
-    EditText email,password;
     Button regbtn,login,phone;
     ProgressDialog progress,progressgoogle;
     private FirebaseAuth firebaseAuth;
@@ -49,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         verify=findViewById(R.id.sign_in);
         mAuth=FirebaseAuth.getInstance();
 
-        regbtn=findViewById(R.id.regstrbtn);
 
         createRequest();
 
@@ -59,10 +59,6 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
-        intoHome();
-        email = findViewById(R.id.txt_email);
-        password = findViewById(R.id.text_password);
-        login = findViewById(R.id.login);
         phone=findViewById(R.id.phone);
         progressgoogle = new ProgressDialog(this);
         progressgoogle.setCancelable(false);
@@ -74,55 +70,11 @@ public class LoginActivity extends AppCompatActivity {
         progress.setCancelable(false);
         progress.setTitle("");
         progress.setMessage("Signing in..");
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String mail = email.getText().toString();
-                String pwd = password.getText().toString();
-                if (mail.isEmpty()){
-                    email.setError("Please enter a valid E-mail id");
-                    email.requestFocus();
-                } else
-                if (pwd.isEmpty()){
-                    password.setError("Please enter a valid Password");
-                    email.requestFocus();
-                }
-                else if (mail.isEmpty() && pwd.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
 
-                }
-                else if (!(mail.isEmpty() && pwd.isEmpty())){
-                    progress.show();
-                    firebaseAuth.signInWithEmailAndPassword(mail,pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()){
-                                progress.cancel();
-                                Toast.makeText(LoginActivity.this,"Login error, Please check the email and password",Toast.LENGTH_SHORT).show();
-                            } else {
-                                Intent intoHome = new Intent(LoginActivity.this, MainActivity.class);
-                                progress.cancel();
-                                startActivity(intoHome);
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(LoginActivity.this,"Error occured!",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
 
-    private void intoHome() {
-        regbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
+
     private  void  phoneauth(){
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,8 +148,27 @@ public class LoginActivity extends AppCompatActivity {
                                 progressgoogle.cancel();
 
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Intent intent=new Intent(LoginActivity.this,UserActivity.class);
-                                startActivity(intent);
+                                SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                                boolean previouslyStarted2 = prefs1.getBoolean(getString(R.string.pref_previously_started3), false);
+                                if(!previouslyStarted2) {
+                                    SharedPreferences.Editor edit = prefs1.edit();
+                                    edit.putBoolean(getString(R.string.pref_previously_started3), Boolean.TRUE);
+                                    edit.apply();
+                                    Intent intent=new Intent(LoginActivity.this,MainActivity.class)
+                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                                    startActivity(intent);
+
+                                } else
+                                {
+                                    Intent intentUser=new Intent(LoginActivity.this,UserActivity.class)
+                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                                    startActivity(intentUser);
+
+                                }
+
+
 
                             } else {
                                 // If sign in fails, display a message to the user.

@@ -21,9 +21,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Enter Details"
+                android:text="@string/enter_details"
                 android:textColor="@color/blue_dark"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
             <!---->
 
 
@@ -31,12 +31,12 @@
                 style="@style/editTextTitleTextStyle"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="35dp"
-                android:text=" Name" />
+                android:text="@string/name" />
 
             <EditText
-                android:id="@+id/shop_name"
+                android:id="@+id/full_name"
                 style="@style/registerEditTextStyle"
-                android:hint="Full Name" />
+                android:hint="@string/full_name" />
 
             <View
                 android:layout_width="match_parent"
@@ -48,14 +48,14 @@
 
             <TextView
                 style="@style/editTextTitleTextStyle"
-                android:text="District" />
+                android:text="@string/region" />
 
             <EditText
                 android:id="@+id/region"
                 style="@style/editTextStyle"
                 android:layout_marginTop="5dp"
                 android:clickable="true"
-                android:hint="Region"
+                android:hint="@string/region"
                 android:inputType="textPersonName"
                 tools:ignore="KeyboardInaccessibleWidget" />
             <View
@@ -69,14 +69,16 @@
             <!---->
             <TextView
                 style="@style/editTextTitleTextStyle"
-                android:text="Phone Number"
-                android:inputType="number"/>
+                android:text="@string/phone_number"
+                android:inputType="number"
+                tools:ignore="TextViewEdits" />
 
             <EditText
-                android:id="@+id/shop_category"
+                android:id="@+id/ph_no"
                 style="@style/registerEditTextStyle"
-                android:hint="Category Of The Shop"
-                android:inputType="textPersonName" />
+                android:hint="@string/enter_your_number"
+                android:maxLength="10"
+                android:inputType="phone" />
 
             <View
                 android:layout_width="match_parent"
@@ -89,13 +91,13 @@
 
             <TextView
                 style="@style/editTextTitleTextStyle"
-                android:text="Address Line 1" />
+                android:text="@string/address_line_1" />
 
             <EditText
                 android:id="@+id/address1"
                 style="@style/registerEditTextStyle"
-                android:hint="Address "
-                android:inputType="textEmailAddress" />
+                android:hint="@string/address"
+                android:inputType="textPostalAddress" />
 
             <View
                 android:layout_width="match_parent"
@@ -107,13 +109,13 @@
             <!--            -->
             <TextView
                 style="@style/editTextTitleTextStyle"
-                android:text="Address Line 2" />
+                android:text="@string/address_line_2" />
 
             <EditText
                 android:id="@+id/address2"
                 style="@style/registerEditTextStyle"
-                android:hint="Address "
-                android:inputType="textPassword" />
+                android:hint="@string/address"
+                android:inputType="textPostalAddress" />
 
             <View
                 android:layout_width="match_parent"
@@ -127,13 +129,14 @@
 
             <TextView
                 style="@style/editTextTitleTextStyle"
-                android:text="PIN Code" />
+                android:text="@string/pin_code" />
 
             <EditText
                 android:id="@+id/pincode"
                 style="@style/registerEditTextStyle"
-                android:hint="PIN code"
-                android:inputType="textPassword" />
+                android:hint="@string/pin_code"
+                android:maxLength="6"
+                android:inputType="number" />
 
             <View
                 android:layout_width="match_parent"
@@ -144,13 +147,14 @@
                 android:background="@color/view_color" />
             <TextView
             style="@style/editTextTitleTextStyle"
-            android:text="Landmark" />
+            android:text="@string/landmark" />
 
             <EditText
                 android:id="@+id/landmark"
                 style="@style/registerEditTextStyle"
-                android:hint="Landmark"
-                android:inputType="textPassword" />
+                android:hint="@string/landmark"
+                android:inputType="text"
+                />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
@@ -161,7 +165,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/seller_reg"
+                android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
@@ -172,7 +176,7 @@
                 android:background="@color/blue_dark"
                 android:elevation="0dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Submit"
+                android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="13sp" />

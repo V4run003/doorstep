@@ -63,7 +63,6 @@ public class WalkThroughActivity extends AppCompatActivity {
                 else {
                     startActivity(new Intent(WalkThroughActivity.this, LoginActivity.class)
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
-                    finish();
                 }
             }
         });

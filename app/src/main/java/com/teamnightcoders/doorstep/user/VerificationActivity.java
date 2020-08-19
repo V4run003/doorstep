@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class VerificationActivity extends AppCompatActivity {
@@ -83,14 +85,29 @@ public class VerificationActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            SharedPreferences prefs3 = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                            boolean previouslyStarted3 = prefs3.getBoolean(getString(R.string.pref_previously_started2), false);
+                            if(!previouslyStarted3) {
+                                SharedPreferences.Editor edit = prefs3.edit();
+                                edit.putBoolean(getString(R.string.pref_previously_started2), Boolean.TRUE);
+                                edit.apply();
+                                Intent intent=new Intent(VerificationActivity.this,MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            } else
+                            {
+                                Intent intentUser=new Intent(VerificationActivity.this,UserActivity.class);
+                                intentUser.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intentUser);
+                            }
 
-                            Intent intent = new Intent(VerificationActivity.this, MainActivity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                           //ntent intent = new Intent(VerificationActivity.this, MainActivity.class);
+                            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                            startActivity(intent);
+                          //  startActivity(intent);
 
                         } else {
-                            Toast.makeText(VerificationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(VerificationActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
@@ -114,7 +131,7 @@ public class VerificationActivity extends AppCompatActivity {
             mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+        public void onCodeSent(String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
             verificationId = s;
         }
